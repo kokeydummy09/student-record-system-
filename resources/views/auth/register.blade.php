@@ -57,7 +57,7 @@
 
                 <p class="text-center text-sm mt-2">
                     Already have an account?
-                    <a href={{ route('sign-in') }} class="link">Sign in</a>
+                    <a href={{ route('login') }} class="link">Sign in</a>
                 </p>
             </div>
         </div>

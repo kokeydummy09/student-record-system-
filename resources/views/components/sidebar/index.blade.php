@@ -12,7 +12,7 @@
     <nav class="flex-1 p-4">
         <ul class="space-y-2">
             <li>
-                <a href="#" class="flex items-center gap-3 p-3 rounded-lg hover:bg-base-200">
+                <a href={{ route('admin.students.index') }} class="flex items-center gap-3 p-3 rounded-lg hover:bg-base-200">
                     <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M16 11V5a1 1 0 00-1-1H5a1 1 0 00-1 1v6m0 0l7 4 7-4M5 11v6a1 1 0 001 1h10a1 1 0 001-1v-6" />

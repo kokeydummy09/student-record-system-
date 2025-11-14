@@ -35,7 +35,8 @@
                                 </label>
                                 <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-40">
                                     <li>
-                                        <a href="" class="flex items-center gap-2">View</a>
+                                        <a href={{ route('admin.students.show', $student) }}
+                                            class="flex items-center gap-2">View</a>
                                     </li>
                                     <li>
                                         <a href="{{ route('admin.students.edit', $student) }}"

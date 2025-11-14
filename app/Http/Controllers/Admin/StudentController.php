@@ -10,7 +10,7 @@ class StudentController extends Controller
 {
     public function index()
     {
-        $perPage = 10; // change as needed or read from request('per_page')
+        $perPage = 10; 
         $students = Students::latest()->paginate($perPage)->withQueryString();
         return view('admin.students.index', compact('students'));
     }
@@ -45,9 +45,9 @@ class StudentController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Students $student)
     {
-        //
+        return view('admin.students.show', compact('student'));
     }
 
     /**
