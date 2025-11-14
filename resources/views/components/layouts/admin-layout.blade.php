@@ -10,6 +10,7 @@
     <link href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600,700" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" />
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+    {{ $head ?? '' }}
 </head>
 
 <body class="min-h-screen bg-base-200 text-base-content font-sans">
@@ -19,11 +20,13 @@
             <x-header.adminHeader />
             <main class="flex-1 overflow-auto p-6">
                 <div class="mx-auto w-full max-w-7xl">
-                    @yield('content')
+                    {{ $slot }}
                 </div>
             </main>
         </div>
     </div>
+
+    @stack('scripts')
 </body>
 
 </html>

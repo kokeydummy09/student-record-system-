@@ -1,6 +1,4 @@
-@extends('layouts.authLayout')
-
-@section('content')
+<x-layouts.auth-layout>
     <div class="w-full max-w-md mx-auto p-6">
         <div class="card shadow-lg">
             <div class="card-body">
@@ -59,4 +57,4 @@
             </div>
         </div>
     </div>
-@endsection
+</x-layouts.auth-layout>

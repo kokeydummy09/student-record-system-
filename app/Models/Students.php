@@ -17,5 +17,33 @@ class Students extends Model
         'year_level',
     ];
 
+    protected static array $searchable = [
+        'studId'   => 'student_id',
+        'name'   => 'full_name',
+        'email'  => 'email',
+        'course' => 'course',
+        'year'   => 'year_level',
+    ];
+
+    public function scopeSearch($query, ?string $term = null, ?string $field = null)
+    {
+        $term = trim((string) ($term ?? ''));
+
+        if ($term === '') {
+            return $query;
+        };
+
+        if ($field && isset(self::$searchable[$field])) {
+            $column = self::$searchable[$field];
+            return $query->where($column, 'like', "%{$term}%");
+        };
+
+        return $query->where(function ($q) use ($term) {
+            foreach (self::$searchable as $column) {
+                $q->orWhere($column, 'like', "%{$term}%");
+            }
+        });
+    }
+
     protected $casts = ['date_of_birth' => 'date'];
 }

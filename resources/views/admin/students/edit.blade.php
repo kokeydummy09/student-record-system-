@@ -1,6 +1,4 @@
-@extends('layouts.adminLayout')
-
-@section('content')
+<x-layouts.admin-layout title="Edit Student • SRS">
     <div class="max-w-2xl mx-auto">
         <h2 class="text-xl font-semibold mb-4">Edit Student</h2>
 
@@ -36,12 +34,14 @@
                         <label class="label"><span class="label-text">Gender</span></label>
                         <select name="gender" class="select select-bordered w-full">
                             <option value="">Select</option>
-                            <option value="male" {{ old('gender', $student->gender) == 'male' ? 'selected' : '' }}>Male
+                            <option value="male" {{ old('gender', $student->gender) == 'male' ? 'selected' : '' }}>
+                                Male
                             </option>
                             <option value="female" {{ old('gender', $student->gender) == 'female' ? 'selected' : '' }}>
                                 Female
                             </option>
-                            <option value="other" {{ old('gender', $student->gender) == 'other' ? 'selected' : '' }}>Other
+                            <option value="other" {{ old('gender', $student->gender) == 'other' ? 'selected' : '' }}>
+                                Other
                             </option>
                         </select>
                     </div>
@@ -72,4 +72,4 @@
             </div>
         </form>
     </div>
-@endsection
+</x-layouts.admin-layout>

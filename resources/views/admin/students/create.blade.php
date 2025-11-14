@@ -1,6 +1,4 @@
-@extends('layouts.adminLayout')
-
-@section('content')
+<x-layouts.admin-layout title="Create Student • SRS">
     <div class="max-w-2xl mx-auto">
         <h2 class="text-xl font-semibold mb-4">Create Student</h2>
 
@@ -20,15 +18,15 @@
             <div class="grid grid-cols-1 gap-3">
                 <div>
                     <label class="label"><span class="label-text">Full name</span></label>
-                    <input type="text" name="full_name" value="{{ old('full_name') }}" class="input input-bordered w-full"
-                        required />
+                    <input type="text" name="full_name" value="{{ old('full_name') }}"
+                        class="input input-bordered w-full" required />
                 </div>
 
                 <div class="grid grid-cols-2 gap-3">
                     <div>
                         <label class="label"><span class="label-text">Date of birth</span></label>
-                        <input type="date" name="date_of_birth" value="{{ old('date_of_birth') }}" class="input input-bordered w-full"
-                            required />
+                        <input type="date" name="date_of_birth" value="{{ old('date_of_birth') }}"
+                            class="input input-bordered w-full" required />
                     </div>
                     <div>
                         <label class="label"><span class="label-text">Gender</span></label>
@@ -65,4 +63,4 @@
             </div>
         </form>
     </div>
-@endsection
+</x-layouts.admin-layout>

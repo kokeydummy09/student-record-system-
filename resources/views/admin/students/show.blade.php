@@ -1,6 +1,4 @@
-@extends('layouts.adminLayout')
-
-@section('content')
+<x-layouts.admin-layout title="Student • SRS">
     <div class="max-w-4xl mx-auto">
         <div class="card bg-base-100 shadow-lg overflow-hidden">
             <div class="card-body p-6 md:p-8">
@@ -63,4 +61,4 @@
             </div>
         </div>
     </div>
-@endsection
+</x-layouts.admin-layout>

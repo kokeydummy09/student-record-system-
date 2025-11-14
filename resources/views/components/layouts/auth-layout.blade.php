@@ -14,7 +14,7 @@
 
 <body>
     <main class="flex items-center justify-center min-h-screen">
-        @yield('content')
+        {{ $slot }}
     </main>
 </body>
 

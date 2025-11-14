@@ -8,11 +8,18 @@ use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 class StudentController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $perPage = 10; 
-        $students = Students::latest()->paginate($perPage)->withQueryString();
-        return view('admin.students.index', compact('students'));
+        $perPage = 10;
+        $q = $request->query('q');
+        $field = $request->query('field');
+
+        $students = Students::latest()
+            ->search($q, $field)         
+            ->paginate($perPage)
+            ->withQueryString();
+
+        return view('admin.students.index', compact('students', 'q', 'field'));
     }
 
     /**
@@ -36,10 +43,10 @@ class StudentController extends Controller
             'course' => ['required', 'string', 'max:255'],
             'year_level' => ['required', 'string', 'max:50'],
         ]);
-
         Students::create($data);
-
-        return redirect()->route('admin.students.index')->with('success', 'Student created.');
+        return redirect()
+            ->route('admin.students.index')
+            ->with('success', 'Student created.');
     }
 
     /**
@@ -73,7 +80,9 @@ class StudentController extends Controller
         ]);
 
         $student->update($data);
-        return redirect()->route('admin.students.index')->with('success', 'Student updated successfully.');
+        return redirect()
+            ->route('admin.students.index')
+            ->with('success', 'Student updated successfully.');
     }
 
     /**
@@ -82,6 +91,8 @@ class StudentController extends Controller
     public function destroy(Students $student)
     {
         $student->delete();
-        return redirect()->route('admin.students.index')->with('success', 'Student deleted.');
+        return redirect()
+            ->route('admin.students.index')
+            ->with('success', 'Student deleted.');
     }
 }

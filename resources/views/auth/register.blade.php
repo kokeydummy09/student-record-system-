@@ -1,7 +1,4 @@
-@extends('layouts.authLayout')
-
-
-@section('content')
+<x-layouts.auth-layout>
     <div class="w-full max-w-md mx-auto p-6">
         <div class="card shadow-lg">
             <div class="card-body">
@@ -47,7 +44,8 @@
                         <label class="label mb-1">
                             <span class="label-text">Confirm Password</span>
                         </label>
-                        <input type="password" name="password_confirmation" required class="input input-bordered w-full" />
+                        <input type="password" name="password_confirmation" required
+                            class="input input-bordered w-full" />
                     </div>
 
                     <div class="form-control mb-3">
@@ -62,4 +60,4 @@
             </div>
         </div>
     </div>
-@endsection
+</x-layouts.auth-layout>
