@@ -35,7 +35,7 @@ Prerequisites:
 
 1. Clone repository:
 ```bash
-git clone https://github.com/kokeydummy09/student-record-system-.git
+git clone https://github.com/kokeydummy09/student-record-system.git
 cd student-record-system
 ```
 
