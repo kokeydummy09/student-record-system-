@@ -1,4 +1,4 @@
-div<x-layouts.admin-layout title="Student Profile • SRS">
+<x-layouts.admin-layout title="Student Profile • SRS">
   <div class="mx-auto max-w-4xl">
     <div class="card bg-base-100 overflow-hidden shadow-lg">
       <div class="card-body p-6 md:p-8">
