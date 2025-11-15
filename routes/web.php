@@ -8,10 +8,13 @@ use App\Http\Middleware\EnsureUserIsAdmin;
 use Illuminate\Support\Facades\Route;
 
 
-// Root routes
-Route::view('/', 'welcome')
-    ->middleware('guest')
-    ->name('home');
+// Root route: guests see the welcome page; authenticated users go to admin
+Route::get('/', function () {
+    if (auth()->check()) {
+        return redirect()->route('admin.students.index');
+    }
+    return view('welcome');
+})->name('home');
 
 
 // Auth routes

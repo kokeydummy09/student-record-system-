@@ -17,7 +17,7 @@
     <div class="flex h-screen">
         <x-sidebar />
         <div class="flex-1 flex flex-col">
-            <x-header.adminHeader />
+            <x-header.adminHeader :title="$title" />
             <main class="flex-1 overflow-auto p-6">
                 <div class="mx-auto w-full max-w-7xl">
                     {{ $slot }}

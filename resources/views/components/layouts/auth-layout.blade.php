@@ -16,6 +16,7 @@
     <main class="flex items-center justify-center min-h-screen">
         {{ $slot }}
     </main>
+    @stack('scripts')
 </body>
 
 </html>

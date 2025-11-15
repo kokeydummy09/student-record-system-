@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Casts\Attribute;
+
 
 class Students extends Model
 {
@@ -43,6 +45,13 @@ class Students extends Model
                 $q->orWhere($column, 'like', "%{$term}%");
             }
         });
+    }
+
+    protected function course(): Attribute
+    {
+        return Attribute::make(
+            set: fn ($value) => $value !== null ? mb_strtoupper(trim($value), 'UTF-8') : null,
+        );
     }
 
     protected $casts = ['date_of_birth' => 'date'];
